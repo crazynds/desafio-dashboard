@@ -1,0 +1,24 @@
+body:not(.sidebar-collapse) .nav-icon {
+    margin-left: 0 !important;
+}
+
+html {
+    overflow-y: auto !important;
+}
+
+/* Correção da cor quando clicado no nav-item da sidebar*/
+
+[class*="sidebar-dark-"] .nav-item > .nav-link {
+    background-color: rgba(255, 255, 255, 0) !important;
+    color: #c2c7d0 !important;
+}
+
+[class*="sidebar-dark-"] .nav-item.menu-open > .nav-link,
+[class*="sidebar-dark-"] .nav-item > .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+}
+
+.nav-treeview > .nav-item > .nav-link {
+    border-left: 2px solid rgba(0, 0, 0, 0.5);
+}
