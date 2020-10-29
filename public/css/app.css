@@ -35825,13 +35825,6 @@ readers do not read off random characters that represent icons */
 .fas {
   font-family: 'Font Awesome 5 Free';
   font-weight: 900; }
-.small_btn {
-    padding: 1px 5px 1px 5px !important;
-}
-.row_table_custom1 > td {
-    padding: 5px 5px 5px 5px !important;
-}
-
 body:not(.sidebar-collapse) .nav-icon {
     margin-left: 0 !important;
 }
