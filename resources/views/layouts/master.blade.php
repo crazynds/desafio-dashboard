@@ -6,11 +6,11 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <title>@yield('title')</title>
-
+    @yield('head')
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <script src="{{ asset('js/app.js') }}"></script>
 </head>
-<body class="hold-transition sidebar-mini text-sm">
+<body class="hold-transition sidebar-mini text-sm" style="background: rgb(187,187,221);
+background: linear-gradient(0deg, rgba(187,187,221,1) 0%, rgba(238,238,255,1) 100%);">
 
     <div class="wrapper">
         {{--Navbar--}}
@@ -53,13 +53,8 @@
                 </div>
             </aside>
 
-            <div class="content-wrapper">
-                <div class="content-header">
-                    @yield('content-header')
-                </div>
-                <div class="content">
-                    @yield('content')
-                </div>
+            <div class="content-wrapper" style="background: rgba(255, 255, 255, 0);">
+                @yield('content')
             </div>
 
             <aside class="control-sidebar control-sidebar-dark">
@@ -68,13 +63,13 @@
         </div>
 
         {{-- Footer --}}
-        <footer class="main-footer">
+        <footer class="main-footer" style="min-height: 48px">
             <div class="float-right d-none d-sm-inline">
                 Nextline
             </div>
-            <strong>Copyleft</strong> All rights reserved.
         </footer>
     </div>
 
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

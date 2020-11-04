@@ -7,12 +7,19 @@
 require('./scripts-frameworks');
 
 import Vue from 'vue'
+import vuetify from "./vuetify";
 import VueRouter from 'vue-router'
+import VueProgressBar from 'vue-progressbar'
 
+Vue.use(VueProgressBar, {
+    color: "rgb(143, 255, 199)",
+    failedColor: "red",
+    height: "6px"
+})
 Vue.use(VueRouter)
 
-const Foo = { template: '<div>foo</div>' }
-const Bar = { template: '<div>goo</div>' }
+const Home = { template: '<h1>Home</h1>' }
+const Dashboard = require("./views/Dashboard.vue").default
 
 
 
@@ -20,16 +27,26 @@ const router = new VueRouter({
     mode: 'history',
     routes: [
         {
-            path: '/foo',
-            name: 'Foo',
-            component: Foo
+            path:'/',
+            name:'home',
+            component: Home
         },
         {
-            path: '/goo',
-            name: 'Goo',
-            component: Bar
+            path: '/home',
+            name: 'Home',
+            component: Home
+        },
+        {
+            path: '/Dashboard',
+            name: 'Dashboard',
+            component: Dashboard
+        },
+        {
+            path: '*',
+            name: 'Not Found 404',
+            component: require ("./views/NotFound.vue").default
         }
-    ]
+    ],
 })
 
 
@@ -37,4 +54,5 @@ const router = new VueRouter({
 const app = new Vue({
     el: '#app',
     router,
+    vuetify,
 });
